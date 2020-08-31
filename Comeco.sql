@@ -22,6 +22,7 @@ materia_prof varchar (10),
 cidade_prof varchar (15),
 materia_id int,
 );
+
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(1,'Vitor Duarte','M',21,1,'São Paulo');
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(2,'Eduardo Montenegro','M',20,1,'São Paulo');
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(3,'Amanda Pereira','F',21,1,'Rio de Janeiro');
@@ -32,4 +33,11 @@ insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(7,'Vinicius Gonça
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(8,'Sofia Linhares','F',25,1,'Florianópolis');
 
 select * from aluno;
+
+--1 PROGRAMAÇÃO
+--2 BANCO DE DADOS
+--3 MACHINE LEARNING
+--4 ESTATÍSTICA
+
+insert into professor(id_prof,nome_prof,sexo_prof,idade,materia_prof,cidade_prof,materia_id)values(1,'Rogerio','M',35,'Programação','Belo Horizonte',1);
 
