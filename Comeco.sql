@@ -50,4 +50,6 @@ insert into professor(id_prof,nome_prof,sexo_prof,idade,materia_prof,cidade_prof
 
 select * from professor;
 
+select * from aluno as a inner join professor as p where a.id = p.id_prof;
+
 
