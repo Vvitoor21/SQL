@@ -1,3 +1,5 @@
+-- MYSQL SYNTAX ! --
+
 --tabelas do arquivo comeco.sql
 --usando selects - DQL
 
