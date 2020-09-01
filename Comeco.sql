@@ -1,8 +1,8 @@
 --ESTES SÃO DADOS DE DATA DEFINITION LANGUAGE --DDL 
 
-create database bancodedados;
+create database bancovitor;
 
-use bancodedados;
+use bancovitor;
 
 create table aluno(
 id int primary key not null,
@@ -17,15 +17,11 @@ create table professor(
 id_prof int primary key not null,
 nome_prof varchar (60) not null,
 sexo_prof char(1),
-idade int
+idade int,
 materia_prof varchar (10),
 cidade_prof varchar (15),
-materia_id int,
+materia_id int
 );
-
-alter table professor change column materia_prof  materia_prof varchar (25);
-alter table professor change column cidade_prof  cidade_prof varchar (25);
-alter table professor change column nome_prof nome_prof varchar (25);
 
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(1,'Vitor Duarte','M',21,1,'São Paulo');
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(2,'Eduardo Montenegro','M',20,2,'São Paulo');
@@ -53,7 +49,5 @@ insert into professor(id_prof,nome_prof,sexo_prof,idade,materia_prof,cidade_prof
 insert into professor(id_prof,nome_prof,sexo_prof,idade,materia_prof,cidade_prof,materia_id)values(8,'Gilson','M',39,'Machine Learning','São Paulo',3);
 
 select * from professor;
-
-select * from aluno as a inner join professor as p where a.id = p.id_prof;
 
 
