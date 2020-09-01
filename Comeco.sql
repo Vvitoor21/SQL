@@ -23,6 +23,10 @@ cidade_prof varchar (15),
 materia_id int,
 );
 
+alter table professor change column materia_prof  materia_prof varchar (25);
+alter table professor change column cidade_prof  cidade_prof varchar (25);
+alter table professor change column nome_prof nome_prof varchar (25);
+
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(1,'Vitor Duarte','M',21,1,'São Paulo');
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(2,'Eduardo Montenegro','M',20,2,'São Paulo');
 insert into aluno(id,nome,sexo,idade,id_materia,cidade)values(3,'Amanda Pereira','F',21,4,'Rio de Janeiro');
