@@ -1,3 +1,5 @@
+-- MYSQL SYNTAX--
+
 --ESTES SÃO DADOS DE DATA DEFINITION LANGUAGE --DDL 
 
 create database bancovitor;
