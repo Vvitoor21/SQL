@@ -24,3 +24,13 @@ select nome_prof, max(idade) from professor group by nome_prof having max(idade)
 select nome_prof, min(idade) from professor group by nome_prof having max(idade) < 39;
 
 select nome,max(idade) from aluno group by nome having max(idade)> 25;
+
+#SUBSELECT!!!!--Selects como condição: 
+
+select id,nome,cidade from aluno where cidade in (select cidade from aluno where cidade = 'São Paulo');
+select nome_prof,materia_prof,idade from professor where idade in(select idade from professor where idade =  40);
+
+select materia_prof,count(materia_prof) from professor group by materia_prof;
+
+
+
