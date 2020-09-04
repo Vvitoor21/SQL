@@ -9,7 +9,7 @@ select * from Person.BusinessEntityAddress where AddressID >= 250 and <= 500
 
 --SELECT COM IN--
 select * from HumanResources.Employee where JobTitle in ('Design Engineer')
-
+select * from HumanResources.Employee where JobTitle in ('Design Engineer','Marketing Specialist')
 
 --ABAIXO UM SELECT COM AS CONDICOES 'CASE' E 'LIKE'--
 Select EmailAddress,
@@ -21,6 +21,13 @@ WHEN EmailAddress LIKE '%@msn%' THEN 'MICROSOFT'
 WHEN EmailAddress LIKE '%@hotmail%' THEN 'MICROSOFT'
 ELSE 'OUTROS' END AS FLAG_DOMINIO
 from Dataview_Subs
+
+select * from Production.WorkOrder
+
+select ProductId, count(ProductId) as quantidade ,avg(StockedQty) as valor_entre
+from Production.WorkOrder group by ProductId
+
+select ProductId, StockedQty from Production.WorkOrder where ProductId = 925
 
 
 
