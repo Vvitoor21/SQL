@@ -29,5 +29,15 @@ from Production.WorkOrder group by ProductId
 
 select ProductId, StockedQty from Production.WorkOrder where ProductId = 925
 
+#O COMANDO "HAVING" É ULTILIZADO PARA COLUNAS Q JA ESTÃO AGRUPADAS PELO GROUP BY 
+
+select ProductId, count(ProductId) as quantidade ,avg(StockedQty) as valor_entre
+from Production.WorkOrder group by ProductId
+
+select ProductId, StockedQty from Production.WorkOrder where ProductId = 925
+
+select ProductId, count(ProductID) from Production.WorkOrder group by ProductID having count(ProductId) > 1080
+
+
 
 
