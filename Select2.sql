@@ -52,6 +52,9 @@ select ProductId, count(ProductID) from Production.WorkOrder group by ProductID 
 
 select * from Production.WorkOrder;
 
+#TRABALHANDO COM DATAS
+select avg(Total),datepart(month,Date) as mes from Sales
+group by  datepart(month,Date) order by mes
 
 
 
