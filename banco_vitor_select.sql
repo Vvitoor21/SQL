@@ -34,9 +34,6 @@ select materia_prof,count(materia_prof) from professor group by materia_prof;
 
 select SalesOrderID, datepart(month,OrderDate) from Sales.SalesOrderHeader
 
-#TRABALHANDO COM DATAS
-select avg(Total),datepart(month,Date) as mes from Sales
-group by  datepart(month,Date) order by mes
 
 
 
