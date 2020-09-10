@@ -28,6 +28,7 @@ select ProductId, count(ProductId) as quantidade ,avg(StockedQty) as valor_entre
 from Production.WorkOrder group by ProductId
 
 
+
 select ProductId, StockedQty from Production.WorkOrder where ProductId = 925
 
 #SELECIONANDO A MÉDIA DE ACORDO COM A QUANTIDADE TOTAL DE CADA "ProductID".
