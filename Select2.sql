@@ -27,8 +27,6 @@ select * from Production.WorkOrder
 select ProductId, count(ProductId) as quantidade ,avg(StockedQty) as valor_entre
 from Production.WorkOrder group by ProductId
 
-
-
 select ProductId, StockedQty from Production.WorkOrder where ProductId = 925
 
 #SELECIONANDO A MÉDIA DE ACORDO COM A QUANTIDADE TOTAL DE CADA "ProductID".
@@ -56,6 +54,26 @@ select * from Production.WorkOrder;
 #TRABALHANDO COM DATAS
 select avg(Total),datepart(month,Date) as mes from Sales
 group by  datepart(month,Date) order by mes
+
+use AdventureWorks2017
+
+select * from Person.Person
+
+select 2 + 2 as soma, 2-2 as diferenca,2*2 as multiplicacao, 2/2 as divisao
+
+select 'O nome da pessoa é '+ FirstName +'.E seu número é: '+
+cast(EmailPromotion as varchar(2))as Introducao
+from Person.Person
+
+select 'o numero do email é:'+
+convert(varchar(2),EmailPromotion)as Numero
+from Person.Person
+
+select ModifiedDate from Person.Person
+
+Select 'A data:'+convert(varchar(100),ModifiedDate)+' - está entre 2009'as Data from Person.Person  
+where datepart(year,ModifiedDate)= '2009'
+--Podemos usar ambas a funções cast e convert.Porém cast está para ISO e convert para T-SQL
 
 
 
