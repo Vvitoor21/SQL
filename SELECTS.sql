@@ -11,6 +11,7 @@ select * from Person.BusinessEntityAddress where AddressID >= 250 and <= 500
 select * from HumanResources.Employee where JobTitle in ('Design Engineer')
 select * from HumanResources.Employee where JobTitle in ('Design Engineer','Marketing Specialist')
 
+
 --ABAIXO UM SELECT COM AS CONDICOES 'CASE' E 'LIKE'--
 Select EmailAddress,
 CASE  WHEN EmailAddress LIKE '%@gmail%' THEN 'GMAIL'
@@ -61,6 +62,7 @@ select * from Person.Person
 
 select 2 + 2 as soma, 2-2 as diferenca,2*2 as multiplicacao, 2/2 as divisao
 
+--Convert e Cast 
 select 'O nome da pessoa é '+ FirstName +'.E seu número é: '+
 cast(EmailPromotion as varchar(2))as Introducao
 from Person.Person
@@ -74,6 +76,17 @@ select ModifiedDate from Person.Person
 Select 'A data:'+convert(varchar(100),ModifiedDate)+' - está entre 2009'as Data from Person.Person  
 where datepart(year,ModifiedDate)= '2009'
 --Podemos usar ambas a funções cast e convert.Porém cast está para ISO e convert para T-SQL
+                               
+use Estudos
 
+--Criando um coluna calculavel dentro da tabela sql.
+create table test(numero int, numero2 int, soma as(numero + numero2))
 
+insert into test values(5,5)
+insert into test values(10,5)
+insert into test values(5,30)
 
+select * from test
+                                                   
+--Concatenação de Strings
+select 'Vitor'+'está'+'estudando'+'sql'    
