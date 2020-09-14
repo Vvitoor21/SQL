@@ -79,14 +79,16 @@ where datepart(year,ModifiedDate)= '2009'
                                
 use Estudos
 
---Criando um coluna calculavel dentro da tabela sql.
+-- Criando um coluna calculavel dentro da tabela sql --------------------------------------------------------------------------------------------------------------------------
 create table test(numero int, numero2 int, soma as(numero + numero2))
-
+create table sub(numero int,numero2 int, subtracao as(numero - numero 1))
+create table divi(n1 int, n2 int, divisao as(n1 / n2))
+                                                  
 insert into test values(5,5)
 insert into test values(10,5)
 insert into test values(5,30)
 
 select * from test
                                                    
---Concatenação de Strings
+-- Concatenação de Strings------------------------------------------------------------------------------------------------------------------------------------------------------
 select 'Vitor'+'está'+'estudando'+'sql'    
