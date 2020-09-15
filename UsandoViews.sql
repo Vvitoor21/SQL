@@ -15,3 +15,4 @@ select * from Duas_colunas
 
 select Coluna from ent._DataView
 --É o mesmo procedimento. Aqui encontrasse os dados de select de uma determinada tabela dentro de uma data view.
+select * from Duas_colunas where PersonType = 'EM'--também é possível aplicar filtros nas Views.
