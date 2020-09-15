@@ -8,3 +8,10 @@ create view somente_firstname as select FirstName from Person.Person
 
 select * from somente_firstname
 
+create view Duas_colunas as select PersonType, BusinessEntityID from Person.Person
+
+select PersonType from Duas_colunas
+select * from Duas_colunas
+
+select Coluna from ent._DataView
+--É o mesmo procedimento. Aqui encontrasse os dados de select de uma determinada tabela dentro de uma data view.
