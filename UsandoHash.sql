@@ -20,3 +20,5 @@ exec Encripitar
 
 --criando stored procedures podemos melhorarar a performance do banco de dados, e retornar determinados valores para os usuarios.
 --view trabalha  com visualização de dados e o alocamento deles através do select.
+
+SELECT CONVERT(NVARCHAR(20), HASHBYTES('SHA2_256', convert(nvarchar(100),PostalCode)),2) as SubscriberKey from Person.Address
