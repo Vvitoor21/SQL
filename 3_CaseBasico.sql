@@ -1,3 +1,4 @@
+--Esta case está sendo utilizado junto com a clausula LIKE--
 Select EmailAddress,
 CASE  WHEN EmailAddress LIKE '%@gmail%' THEN 'GMAIL'
 WHEN EmailAddress LIKE '%@yahoo%' THEN 'YAHOO'
@@ -7,4 +8,4 @@ WHEN EmailAddress LIKE '%@msn%' THEN 'MICROSOFT'
 WHEN EmailAddress LIKE '%@hotmail%' THEN 'MICROSOFT'
 ELSE 'EMAIL NÃO IDENTIFICADO' END AS DOMINIO
 from TABELA_EMAIL
------------------------------------------------------------------------
+
