@@ -1,7 +1,5 @@
 --SYNTAX SQL SERVER--
 
-'Locale' = 'PT-BR
-
 --Ultilizando BETWEEN--
 select * from Person.BusinessEntityAddress where AddressID not between 250 and 500
 select numeros from tabela where numero between 10 and 15
@@ -43,6 +41,8 @@ select * from Production.WorkOrder
 
 select ProductId, count(ProductId) as quantidade ,avg(StockedQty) as valor_entre
 from Production.WorkOrder group by ProductId
+
+--'Locale' = 'PT-BR--
 
 select ProductId, StockedQty from Production.WorkOrder where ProductId = 925
 
