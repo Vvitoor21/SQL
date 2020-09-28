@@ -1,7 +1,7 @@
 --Trabalhando com Datas
 
 select getdate();
---Getdate vem como a aestrutura ano,mes,dia - yyyy/mm/dd
+--Getdate vem como a estrutura ano,mes,dia - yyyy/mm/dd
 
 select convert(char,getdate(),103) as Data
 select convert(char,getdate(),102) as Data
