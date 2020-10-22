@@ -20,4 +20,4 @@ exec Encripitar
 
 SELECT CONVERT(NVARCHAR(20), HASHBYTES('SHA2_256', convert(nvarchar(100),PostalCode)),2) as SubscriberKey from Person.Address
 
-select convert(nvarchar(20),hashbytes('SHA2_256',convert(nvarchar100),coluna)),2) as Coluna_Hash from Tabela
+select convert(nvarchar(20),hashbytes('SHA2_256',convert(nvarchar(100),coluna)),2) as Coluna_Hash from Tabela
