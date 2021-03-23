@@ -33,26 +33,10 @@ from Person.Person where MiddleName is not null and ModifiedDate in
 (select ModifiedDate from Person.Person where Datepart(day,ModifiedDate)= 18 and Datepart(year,ModifiedDate) > 2010)
 order  by Marca
 
-select distinct X.FirstName, X.SOMA from 
-(select convert(varchar,p.ModifiedDate,103) as Data ,p.FirstName, p.MiddleName,
-case when p.FirstName like 'A%' then '000 '+p.FirstName
-     when p.FirstName like 'B%' then '011 '+p.FirstName
-     when p.FirstName like 'C%' then '022 '+p.FirstName
-	 when p.FirstName like 'D%' then '033 '+p.FirstName
-	 when p.FirstName like 'E%' then '044 '+p.FirstName
-else FirstName
-end as SOMA
-from Person.Person as p inner join
-Person.Password as a
-on p.BusinessEntityID = a.BusinessEntityID
-and p.MiddleName is not null) as x
-where X.SOMA != x.FirstName
-order by x.SOMA
-
 select FirstName, len(FirstName) as Tamanho,
 case when len(FirstName) >= 4 then 'Nome Grande'
 else null
-end as Padr„o from Person.Person
+end as Padr√£o from Person.Person
 order by Tamanho
 
 select * from Person.PersonPhone
