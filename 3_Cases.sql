@@ -40,3 +40,27 @@ and p.MiddleName is not null) as x
 where X.SOMA != x.FirstName
 order by x.SOMA
 
+--USEI UM APELIDO PARA O SELECT PARA USAR AS COUNAS ALTERADAS--
+select x.FirstName, X.NOME, x.BusinessEntityID, x.DATA, X.DIA, X.MES, X.NOME_DO_MES from(
+select p.FirstName, p.BusinessEntityID, 
+convert(varchar,o.ModifiedDate,103) as DATA,
+datepart(month,o.ModifiedDate) as MES,
+datepart(day,o.ModifiedDate) as DIA,
+case when p.FirstName like 'A%' then '000 '+p.FirstName
+     when p.FirstName like 'B%' then '011 '+p.FirstName
+     when p.FirstName like 'C%' then '022 '+p.FirstName
+	 when p.FirstName like 'D%' then '033 '+p.FirstName
+	 when p.FirstName like 'E%' then '044 '+p.FirstName
+else FirstName
+end as NOME,
+case when datepart(month,o.ModifiedDate) like '8' then 'Agosto'
+when datepart(month,o.ModifiedDate) like '7' then 'Julho'
+when datepart(month,o.ModifiedDate) like '9' then 'Setembro'
+else 'OUTRO_MES'
+end as NOME_DO_MES
+from Person.Person as p
+inner join Person.PersonPhone as o 
+on p.BusinessEntityID = o.BusinessEntityID
+) as X where X.NOME != X.FirstName and DATEPART(year,x.DATA) = 2011 and X.MES in(8,7,9)
+order by X.NOME
+
