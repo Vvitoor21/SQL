@@ -27,6 +27,19 @@ select datepart(month,getdate()) -- returning the current month
 select dateadd(day,+3,getdate())
 select convert(char,dateadd(day,+3,getdate()),103)
                
-               
-               
-               
+select convert(varchar,ModifiedDate,103) as Data_Padrao_Brasil from Person.Person
+
+select dateadd(day,-3,getdate())
+
+select convert(varchar,modifiedDate,103) from Person.Person
+
+select convert(varchar,(dateadd(day,-3,getdate())),103)
+select convert(varchar,(dateadd(day,-9,getdate())),103)
+select convert(varchar,(dateadd(month,-3,getdate())),103)
+select convert(varchar,(dateadd(month,-5,getdate())),103)
+select convert(varchar,(dateadd(year,-41,getdate())),103)
+select convert(varchar,(dateadd(year,-71,getdate())),103)
+
+select datepart(day,getdate())
+select datepart(month,getdate())
+select datepart(year,getdate())
