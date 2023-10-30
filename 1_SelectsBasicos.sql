@@ -3,7 +3,8 @@
 --Ultilizando BETWEEN--
 select * from Person.BusinessEntityAddress where AddressID not between 250 and 500
 select numeros from tabela where numero between 10 and 15
-select numeros from tabela where (numero not betwenn 0 and 10) and ( numero < 50)
+select numeros from tabela where (numero not between 0 and 10) and ( numero < 50)
+select numeros from tabela where (numero not between 2 and 4) or (numero > 8)
 
 --SELECT COM DOIS METODOS DIFERENTES DE USAR O BETWEEN--
 select * from Person.BusinessEntityAddress where AddressID between 250 and 500
