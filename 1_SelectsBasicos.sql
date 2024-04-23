@@ -1,4 +1,4 @@
---SYNTAX SQL SERVER--
+
 
 --Ultilizando BETWEEN--
 select * from Person.BusinessEntityAddress where AddressID not between 250 and 500
