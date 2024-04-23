@@ -1,4 +1,4 @@
---Esta case está sendo utilizado junto com a clausula LIKE--
+
 Select EmailAddress,
 CASE  WHEN EmailAddress LIKE '%@gmail%' THEN 'GMAIL'
 WHEN EmailAddress LIKE '%@yahoo%' THEN 'YAHOO'
@@ -40,7 +40,6 @@ and p.MiddleName is not null) as x
 where X.SOMA != x.FirstName
 order by x.SOMA
 
---USEI UM APELIDO PARA O SELECT PARA USAR AS COUNAS ALTERADAS--
 select x.FirstName, X.NOME, x.BusinessEntityID, x.DATA, X.DIA, X.MES, X.NOME_DO_MES from(
 select p.FirstName, p.BusinessEntityID, 
 convert(varchar,o.ModifiedDate,103) as DATA,
