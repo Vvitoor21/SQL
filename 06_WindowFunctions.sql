@@ -8,3 +8,7 @@ FROM soccer.match AS m LEFT JOIN soccer.country AS c ON m.country_id = c.id limi
 select name, middle_name, family, age,
 avg(age) over() as overall_age
 from families
+
+select name, age, height, weight,
+rank() (order by height) as ranking_height
+from families
