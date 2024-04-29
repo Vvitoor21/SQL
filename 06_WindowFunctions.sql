@@ -16,3 +16,11 @@ from families
 select person, age, height,
 rank() over(order by height desc) as ranking_height
 from people
+
+select distinct w.season,
+avg(w.temperature) over(partition by w.season) as avg_temp
+from weather w
+
+select distinct m.season,
+sum(m.home_goal) over(partition by m.season) as overall_sum_goals
+from soccer.match m
