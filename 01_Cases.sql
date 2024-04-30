@@ -63,3 +63,29 @@ on p.BusinessEntityID = o.BusinessEntityID
 ) as X where X.NOME != X.FirstName and DATEPART(year,x.DATA) = 2011 and X.MES in(8,7,9)
 order by X.NOME
 
+--- The case case statement. The first is without a subquery and the second is with one.
+
+select te.team_long_name as away_team, t.team_long_name as home_team,
+case when m.home_goal > m.away_goal then 'Home Win'
+     when m.away_goal > m.home_goal then 'Away win'
+	 else 'Tie' end as result 
+from soccer.match m
+left join soccer.team t
+on t.team_api_id = m.hometeam_id
+
+left join soccer.team te
+on m.awayteam_id = te.team_api_id
+
+select s.date, s.home_team, te.team_long_name as away_team, s.result
+from
+(select t.team_api_id, m.awayteam_id, m.hometeam_id, m.date, t.team_long_name as home_team,
+case when m.home_goal > m.away_goal then 'Home Win'
+     when m.away_goal > m.home_goal then 'Away win'
+	 else 'Tie' end as result 
+from soccer.match m
+left join soccer.team t
+on t.team_api_id = m.hometeam_id) as  s
+left join soccer.team te
+on s.awayteam_id = te.team_api_id
+
+--- The case case statement. The first is without a subquery and the second is with one.
