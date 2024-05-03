@@ -25,3 +25,7 @@ from weather w
 select distinct m.season,
 sum(m.home_goal) over(partition by m.season) as overall_sum_goals
 from soccer.match m
+
+select employee,
+sum(salaries) over(partition by employee) as group_em
+from staff
