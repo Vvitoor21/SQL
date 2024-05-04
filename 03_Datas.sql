@@ -15,11 +15,17 @@ select month('11/12/2020') as Mes
 select year('11/12/2020') as Ano
 
 --DATEPART
+  
 --the detepart command returns an specific part of a data.
 
 select datepart(day,getdate()) -- returning the current day
 select datepart(year,getdate()) -- returning the current year
 select datepart(month,getdate()) -- returning the current month
+
+select datepart(month,date_column) from table_a
+select datepart(day,date_column) from table_a
+select datepart(year,date_column) from table_a
+  
 -- and instead the command getdate() we can also put the column about we want to work on.
 
 select datepart(day,ModifiedDate) as Dia from Person.Person
@@ -27,6 +33,7 @@ select datepart(month,ModifiedDate) as Mês from Person.Person
 select datepart(year,ModifiedDate) as Ano from Person.Person
 
 select ModifiedDate, datepart(day,ModifiedDate)as Dia, datepart(month,ModifiedDate) as Mes, datepart(year,ModifiedDate)as Ano from Person.Person
+  
 select FORMAT(ModifiedDate, 'yyyy-MM-dd') as Data, datepart(day,ModifiedDate)as Dia, datepart(month,ModifiedDate) as Mes, datepart(year,ModifiedDate)as Ano from Person.Person
 
 select FORMAT(ModifiedDate, 'dd-MM-yyyy') as Data, datepart(day,ModifiedDate)as Dia, datepart(month,ModifiedDate) as Mes, datepart(year,ModifiedDate)as Ano from Person.Person
