@@ -25,8 +25,18 @@ else null
 end as Padrão from Person.Person
 order by Tamanho
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+---Subquery in SELECT
 
+select season,
+sum(home_goal) as total_home_goal,
+(select sum(home_goal) from soccer.match where season = '2011/2012') as SUM_2011,
+(select sum(home_goal) from soccer.match where season = '2012/2013') as SUM_2012,
+(select sum(home_goal) from soccer.match where season = '2013/2014') as SUM_2013,
+(select sum(home_goal) from soccer.match where season = '2014/2015') as SUM_2014
+from soccer.match
+group by season
 
 
 
