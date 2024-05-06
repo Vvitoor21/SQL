@@ -38,3 +38,10 @@ from staff
 select name, age, family
 row_number() over() as rows
 from families
+
+---LAG()
+SELECT Year, Champion,
+--- Fetch the previous year's champion
+LAG(Champion) OVER (ORDER BY Year ASC) AS Last_Champion
+FROM League
+ORDER BY Year ASC;
