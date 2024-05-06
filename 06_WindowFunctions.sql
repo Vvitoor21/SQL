@@ -36,5 +36,5 @@ from staff
 
 ---ROW_NUMBER()
 select name, age, family
-rom_number() over() as rows
+row_number() over() as rows
 from families
