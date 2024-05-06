@@ -33,3 +33,8 @@ from tracking_emails
 select employee,
 sum(salaries) over(partition by employee) as group_em
 from staff
+
+---ROW_NUMBER()
+select name, age, family
+rom_number() over() as rows
+from families
