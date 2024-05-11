@@ -7,6 +7,14 @@ sum(m.home_goal + m.away_goal) over(partition by c.name, m.season) AS sum
 FROM soccer.match AS m LEFT JOIN soccer.country AS c ON m.country_id = c.id
 where c.name = 'Scotland'
 
+
+---Podemos juntas duas clausulas over() para soma e média como no exemplo abaixo
+SELECT distinct c.name AS country, m.season,
+sum(m.home_goal + m.away_goal) over(partition by c.name, m.season) AS sum,
+avg(m.home_goal + m.away_goal) over(partition by c.name, m.season) AS avg
+FROM soccer.match AS m LEFT JOIN soccer.country AS c ON m.country_id = c.id
+where c.name = 'Scotland'
+
 select name, middle_name, family, age,
 avg(age) over() as overall_age
 from families
