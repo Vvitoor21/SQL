@@ -14,3 +14,19 @@ from families
 select employee, salary,
 sum(salary) over() as overall_salaries
 from staff
+
+select distinct w.season,
+avg(w.temperature) over(partition by w.season) as avg_temp
+from weather w
+
+select distinct m.season,
+sum(m.home_goal) over(partition by m.season) as overall_sum_goals
+from soccer.match m
+
+select year,month, email_name,
+avg(send) over(partition by year,month,email_name) as avg_send
+from tracking_emails
+
+select employee,
+sum(salaries) over(partition by employee) as group_em
+from staff
