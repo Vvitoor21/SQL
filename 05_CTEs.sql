@@ -8,3 +8,9 @@ with name as (
 select person, age, city
 from people )
 select m.person, n.age, n.city from name as n
+
+with cities as (
+select name, avg(population) as avg_pop,
+from city
+group by name ) 
+select name, avg_pop from cities
