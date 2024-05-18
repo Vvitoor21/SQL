@@ -26,8 +26,8 @@ select distinct w.season,
 avg(w.temperature) over(partition by w.season) as avg_temp
 from weather w
 
-select distinct m.season,
-sum(m.home_goal) over(partition by m.season) as overall_sum_goals
+select distinct m.season, month,
+sum(m.home_goal) over(partition by m.season, month) as overall_sum_goals
 from soccer.match m
 
 select year,month, email_name,
