@@ -14,3 +14,9 @@ select name, avg(population) as avg_pop,
 from city
 group by name ) 
 select name, avg_pop from cities
+
+with games as (
+select game, count(console)
+from playstation
+group by games)
+select games, console from games
