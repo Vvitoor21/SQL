@@ -11,3 +11,6 @@ from exames
 ---AGE(calculo de datas)
 select age(data_final,data_inicio) as difenrenca_datas
 from periodo
+
+select age(ano_atual, ano_nascimento) as idade
+from pesssoas
