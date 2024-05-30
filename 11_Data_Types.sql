@@ -6,6 +6,9 @@ from dvdrentals.rental
 select date_prova, date_prova + interval '5 days' as resultado
 from exames
 
+select dia_entrevista, dia_entrevista + interval '10 days' as retorno
+from processo_seletivo
+  
 ---DATE/TIME Functions
   
 ---AGE(calculo de datas)
