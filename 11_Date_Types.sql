@@ -27,3 +27,8 @@ Select current_timestamp
 ---Separating date and time
 Select current_date
 Select current_time
+
+
+select extract (month from date) from table
+---or
+select month(date) from table
