@@ -24,7 +24,6 @@ Select NOW()
 ---or
 Select current_timestamp
 
-
 ---Separating date and time
 Select current_date
 Select current_time
