@@ -12,8 +12,19 @@ from processo_seletivo
 ---DATE/TIME Functions
   
 ---AGE(calculo de datas)
+  
 select age(data_final,data_inicio) as difenrenca_datas
 from periodo
 
 select age(ano_atual, ano_nascimento) as idade
 from pesssoas
+
+---Returning the date at the present moment
+Select NOW()
+---or
+Select current_timestamp
+
+
+---Separating date and time
+Select current_date
+Select current_time
