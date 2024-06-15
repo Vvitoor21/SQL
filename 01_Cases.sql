@@ -1,4 +1,3 @@
-
 Select EmailAddress,
 CASE  WHEN EmailAddress LIKE '%@gmail%' THEN 'GMAIL'
 WHEN EmailAddress LIKE '%@yahoo%' THEN 'YAHOO'
@@ -87,5 +86,3 @@ left join soccer.team t
 on t.team_api_id = m.hometeam_id) as  s
 left join soccer.team te
 on s.awayteam_id = te.team_api_id
-
---- The case case statement. The first is without a subquery and the second is with one.
