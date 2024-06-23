@@ -2,6 +2,10 @@ SELECT distinct c.name AS country, m.season, m.home_goal, m.away_goal,
 avg(m.home_goal + m.away_goal) over() AS overall_avg
 FROM soccer.match AS m LEFT JOIN soccer.country AS c ON m.country_id = c.id limit 3;
 
+select quarto, hospedes,
+avg(hospedes) over() media_hospedes 
+from pousada
+
 SELECT distinct c.name AS country, m.season,
 sum(m.home_goal + m.away_goal) over(partition by c.name, m.season) AS sum
 FROM soccer.match AS m LEFT JOIN soccer.country AS c ON m.country_id = c.id
