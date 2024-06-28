@@ -75,6 +75,8 @@ on t.team_api_id = m.hometeam_id
 left join soccer.team te
 on m.awayteam_id = te.team_api_id
 
+--- ///
+	
 select s.date, s.home_team, te.team_long_name as away_team, s.result
 from
 (select t.team_api_id, m.awayteam_id, m.hometeam_id, m.date, t.team_long_name as home_team,
@@ -86,3 +88,9 @@ left join soccer.team t
 on t.team_api_id = m.hometeam_id) as  s
 left join soccer.team te
 on s.awayteam_id = te.team_api_id
+
+select month,
+case when month == 1 then 'January'
+when month == 2 then 'February'
+else 'others' end as month_name
+from months_year
