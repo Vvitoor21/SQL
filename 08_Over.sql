@@ -38,6 +38,12 @@ select year,month, email_name,
 avg(send) over(partition by year,month,email_name) as avg_send
 from tracking_emails
 
+select year,  month, email_name,
+avg(send) over(partition by year,month,email_name) as avg_send
+sum(send) over(partition by year,month,email_name) as sum_send
+count(send) over(partition by year,month,email_name) as avg_send ---Counting the lines
+from tracking_emails
+
 select employee,
 sum(salaries) over(partition by employee) as group_em
 from staff
