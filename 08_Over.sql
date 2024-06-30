@@ -41,7 +41,7 @@ from tracking_emails
 select year,  month, email_name,
 avg(send) over(partition by year,month,email_name) as avg_send
 sum(send) over(partition by year,month,email_name) as sum_send
-count(send) over(partition by year,month,email_name) as avg_send ---Counting the lines
+count(send) over(partition by year,month,email_name) as count_send ---Counting the lines
 from tracking_emails
 
 select employee,
