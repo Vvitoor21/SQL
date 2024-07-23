@@ -1,3 +1,5 @@
+---Simple query with case----
+
 Select EmailAddress,
 CASE  WHEN EmailAddress LIKE '%@gmail%' THEN 'GMAIL'
 WHEN EmailAddress LIKE '%@yahoo%' THEN 'YAHOO'
@@ -5,7 +7,7 @@ WHEN EmailAddress LIKE '%@live%' THEN 'MICROSOFT'
 WHEN EmailAddress LIKE '%@outlook%' THEN 'MICROSOFT'
 WHEN EmailAddress LIKE '%@msn%' THEN 'MICROSOFT'
 WHEN EmailAddress LIKE '%@hotmail%' THEN 'MICROSOFT'
-ELSE 'EMAIL NÃO IDENTIFICADO' END AS DOMINIO
+ELSE 'EMAIL NÃO IDENTIFICADO' END AS DOMAIN
 from TABELA_EMAIL
 
 select x.BusinessEntityID, x.FirstName, x.LastName from  
@@ -17,7 +19,7 @@ select x.BusinessEntityID, x.FirstName, x.LastName from
                    when FirstName like 'E%' then 'CLIENTE_XP5'
                    when FirstName like 'F%' then 'CLIENTE_XP6'
                    else FirstName 
-                   end
+                   end as DOMAIN_CLIENT
 from Person.Person as p 
 inner join Person.Address as a
 on p.BusinessEntityID = a.AddressID) as x 
